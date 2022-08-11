@@ -1,0 +1,15 @@
+
+.navbar-container{
+    display: flex;
+    background-color: #ffffff;
+}
+
+.left-navbar{
+    display: flex;
+    align-self: left;
+}
+
+.right-navbar{
+    display: flex;
+    
+}
