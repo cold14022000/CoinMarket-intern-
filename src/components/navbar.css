@@ -5,11 +5,11 @@
 }
 
 .left-navbar{
-    display: flex;
-    align-self: left;
+    padding-right: 2000px;
+    margin-left: 40px;
 }
 
 .right-navbar{
-    display: flex;
-    
+    padding-left: 1000px;
+    margin-right: 100px;
 }

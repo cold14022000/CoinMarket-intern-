@@ -1,0 +1,14 @@
+import React from 'react'
+
+export default function Banner(props) {
+  return (
+    <div className='banner'>
+        <div>
+            <div>{props.content}</div>
+            <div className='text-3xl'> ${props.value}</div>
+            <div>{props.percent}%</div>
+        </div>
+            <img className='w-1/2' src={props.img} alt="price-graph" width="100px" />
+    </div>
+  )
+}
