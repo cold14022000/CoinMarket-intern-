@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Banner(props) {
   return (
-    <div className='banner'>
+    <div className=' py-4 px-4   mx-3 rounded-xl bg-white flex justify-between'>
         <div>
             <div>{props.content}</div>
             <div className='text-3xl'> ${props.value}</div>
