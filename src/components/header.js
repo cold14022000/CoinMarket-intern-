@@ -44,7 +44,7 @@ export default function Header() {
       </div>
       <div>
         <div className="flex items-center h-12">
-          <div className="mr-5 font-bold" for="language"></div>
+          <div className="mr-5 font-bold " for="language"></div>
           <select className="language" id="language">
             <option className="ml-1 mr-2" value="en">
               English
@@ -84,7 +84,7 @@ export default function Header() {
           <div className="w-18 mr-2">
             <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1">
-                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left hover:bg-slate-300 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                   <span className="block truncate flex"  ><img className='h-3 w-3 ' src={selected.icon} alt=""/>{selected.name}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <SelectorIcon

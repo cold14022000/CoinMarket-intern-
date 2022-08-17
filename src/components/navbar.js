@@ -2,18 +2,129 @@ import React from 'react'
 
 export default function Navbar(){
     return (
-      <nav className='flex justify-center  h-28    '>
-        <div className="flex">
-          <img className='w-72' src='https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=a768fb2' alt="logo"/>
-          <div className=' flex items-center justify-left'>
-            <div className='px-5 hover:bg-slate-200 h-max'>Crytocurrencies</div>
-            <div className='px-5 hover:bg-slate-200 h-max'>Exchange</div>
-            <div className='px-5 hover:bg-slate-200 h-max'>Community</div>
-            <div className='px-5 hover:bg-slate-200 h-max'>Products</div>
-            <div className='px-5 hover:bg-slate-200 h-max'>Learn</div>
+      <nav className='flex h-20    '>
+        <div className="flex justify-center">
+          <img className=' w-80' src='https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=a768fb2' alt="logo"/>
+          <div className=' flex mr-36'>
+         
+            {/* <!-- Mega menu here --> */}
+        <div class="group">
+            <button class=" group-hover:bg-amber-200 group-hover:text-black peer px-4 py-3 pt-8 font-bold relative ">Crytocurrencies
+            </button>
+            <div
+                class="hidden group-hover:flex flex-col absolute  p-10  bg-amber-200 text-black duration-300">
+                
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-5">
+                    <div class="flex flex-col">
+                        <h3 class="mb-4 text-xl">Crytocurrencies</h3>
+                        <div  class=" hover:bg-gray-200">Ranking</div>
+                        <div  class=" hover:bg-gray-200">Recently Added</div>
+                        <div  class=" hover:bg-gray-200">Categories</div>
+                        <div  class=" hover:bg-gray-200">Spotlight</div>
+                        <div  class=" hover:bg-gray-200">Gainers & Losers</div>
+                        <div  class=" hover:bg-gray-200">Global Charts</div>
+                        <div  class=" hover:bg-gray-200">Historical Snapshots</div>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <h3 class="mb-4 text-xl">NFT</h3>
+                        <div  class=" hover:bg-gray-200">Overall NFT stats</div>
+                        <div  class=" hover:bg-gray-200">Top Collections</div>
+                        <div  class=" hover:bg-gray-200">Upcoming Sales</div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        {/* <!-- end of dropdown --> */}
+
+            <div>
+              <button className="peer px-4 py-3 pt-8 hover:bg-slate-200 font-bold  relative">Exchange</button>
+              {/* <!-- the menu here --> */}
+              <div class="hidden peer-hover:flex hover:flex w-[130px]
+              flex-col bg-white drop-shadow-lg absolute">
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >Spot</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >Derivatives</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >DEX</div>
+              </div>
+            </div><div>
+              <button className="peer px-4 py-3 pt-8 hover:bg-slate-200 font-bold  relative">Community</button>
+              {/* <!-- the menu here --> */}
+              <div class="hidden peer-hover:flex hover:flex w-[130px]
+              flex-col bg-white drop-shadow-lg absolute">
+                  <div class="px-4 py-3 hover:bg-gray-200 " >Feeds</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 " >Articles</div>
+              </div>
+            </div>
+
+            {/* <!-- Mega menu here --> */}
+            <div class="group">
+            <button class=" group-hover:bg-amber-200 group-hover:text-black peer px-4 py-3 pt-8 font-bold relative ">Products
+            </button>
+            <div
+                class="hidden group-hover:flex flex-auto absolute  p-10  bg-amber-200 text-black duration-300">
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+                    <div class="flex flex-col">
+                        <h3 class="mb-4 text-xl">Products</h3>
+                        <div  class=" hover:bg-gray-200">Converter</div>
+                        <div  class=" hover:bg-gray-200">Mobile Apps</div>
+                        <div  class=" hover:bg-gray-200">Blockchain Explorer</div>
+                        <div  class=" hover:bg-gray-200">Job Board</div>
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="mb-4 text-xl">Campaigns</h3>
+                        <div  class=" hover:bg-gray-200">Free Airdrops</div>
+                        <div  class=" hover:bg-gray-200">Diamond Rewards</div>
+                        <div  class=" hover:bg-gray-200">Referral Program</div>
+                        <div  class=" hover:bg-gray-200">Learn & Earn</div>
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="mb-4 text-xl">Calendars</h3>
+                        <div  class=" hover:bg-gray-200">ICO Calendar</div>
+                        <div  class=" hover:bg-gray-200">Events Calendar</div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        {/* <!-- end of dropdown --> */}
+            
+
+            <div>
+              <button className="peer px-4 py-3 pt-8 hover:bg-slate-200 font-bold  relative">Learn</button>
+              {/* <!-- the menu here --> */}
+              <div class="hidden peer-hover:flex hover:flex w-[130px]
+              flex-col bg-white drop-shadow-lg absolute">
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >Alexandria</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >News</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >Conference</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >Video</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >Market Updates</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >Glossary</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >Where to Buy</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 relative border-t-4" >Newsletter</div>
+                  <div class="px-4 py-3 hover:bg-gray-200 relative" >Mmethodology</div>
+              </div>
+            </div>
+
+            {/* <div class="p-10">
+
+              <div class="dropdown inline-block relative">
+                <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
+                  <span class="mr-1">Dropdown</span>
+                </button>
+                <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                  <li class=""><div class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >One</div></li>
+                  <li class=""><div class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >Two</div></li>
+                  <li class=""><div class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >Three is the magic number</div></li>
+                </ul>
+              </div> 
+
+            </div>*/}
+
           </div>
-            <div className='items-center flex'>
-              <div className='flex '>
+          
+            <div className='items-center flex justify-end'>
+              <div className='flex justify-end'>
                   <div className='flex items-center'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star-fill" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
@@ -28,7 +139,7 @@ export default function Navbar(){
                       </svg>
                           <div className='px-2'>Portfolio</div>
                   </div>
-                  <div className='bg-slate-300 rounded-lg flex w-96 h-14 items-center justify-between'> 
+                  <div className='bg-slate-300 rounded-lg flex w-96 h-14 items-center justify-between ml-2'> 
                       
                       <div className='flex m-3'>
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">

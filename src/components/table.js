@@ -3,31 +3,33 @@ import { data } from '../data'
 
 export default function Table() {
   return (
-    <div className='mx-6'>
+    <div className='mx-auto'>
       <div className='items-center flex'>
-        <div className='flex items-center bg-slate-200 rounded-xl p-2 m-2' >
+        <div className='flex items-center bg-slate-200 rounded-xl p-2 m-2 hover:bg-slate-300' >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
           </svg>
-          <div className='px-2'>Watchlist</div>
+          <div className='px-2 '>Watchlist</div>
         </div>
-        <div className='flex items-center  bg-slate-200 rounded-xl p-2 m-2'>
+        <div className='flex items-center  bg-slate-200 rounded-xl p-2 m-2 hover:bg-slate-300'>
           <svg xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" viewBox="0 0 24 24" class="sc-1prm8qw-0 eFjnQR">
             <path d="M13.8182 2H13V11H22V10.1818C22 5.68182 18.3182 2 13.8182 2Z" fill="#A6B0C3"></path>
             <path d="M11.35 5H10.5C5.825 5 2 8.825 2 13.5C2 18.175 5.825 22 10.5 22C15.175 22 19 18.175 19 13.5V12.65H11.35V5Z" fill="#A6B0C3"></path>
           </svg>
           <div className='px-2'>Portfolio</div>
         </div>
-        <div className='items-center px-5 bg-blue-100 justify-center text-blue-700 font-bold h-10 rounded-xl'>Cryptocurrencies</div>
-        <div className='px-5 font-normal cursor-pointer'>Categories</div>
-        <div className='px-5 font-normal cursor-pointer'>DeFi</div>
-        <div className='px-5 font-normal cursor-pointer'>NFT</div>
-        <div className='px-5 font-normal cursor-pointer'>Metaverse</div>
-        <div className='px-5 font-normal cursor-pointer'>Polkadot</div>
-        <div className='px-5 font-normal cursor-pointer'>BNB chain</div>
-        <div className='px-5 font-normal cursor-pointer'>Solana</div>
-        <div className='px-5 font-normal cursor-pointer'>Avalanche</div>
-        <div className='px-5 font-normal cursor-pointer text-lg text-slate-600 '>show rows</div>
+        <div className='px-2 font-normal cursor-pointer flex items-center bg-blue-300 rounded-xl p-2 m-2'>Cryptocurrencies</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>Categories</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>DeFi</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>NFT</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>Metaverse</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>Polkadot</div>
+        <div className='font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2 w-96'>BNB chain</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>Solana</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>Avalanche</div>
+
+        <div className='items-center flex pl-96 justify-end'>
+        <div className='px-2 font-normal cursor-pointer text-lg text-slate-600 display:inline'>show rows</div>
         <div className='flex bg-slate-200 p-2 mx-1 shadow-sm items-center rounded-lg cursor-pointer'>
           <div>20</div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="14" width="14" viewBox="0 0 24 24" class="sc-16r8icm-0 dWGZqy"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -51,15 +53,16 @@ export default function Table() {
           <svg className='px-px ' xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-border-all" viewBox="0 0 16 16">
             <path d="M0 0h16v16H0V0zm1 1v6.5h6.5V1H1zm7.5 0v6.5H15V1H8.5zM15 8.5H8.5V15H15V8.5zM7.5 15V8.5H1V15h6.5z" />
           </svg>
+          </div>
         </div>
       </div>
 
       <table className="table-auto mx-5 items-center text-center justify-center">
 
         <thead>
-          <tr className=''>
+          <tr className='items-center '>
             <th className='text-right w-16'></th>
-            <th className='text-center  w-16'>#</th>
+            <th className='text-center w-16'>#</th>
             <th className='text-left w-80'>Name</th>
             <th className='text-right w-36'>Price</th>
             <th className='text-right w-28'>1h %</th>

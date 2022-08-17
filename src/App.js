@@ -8,7 +8,7 @@ import Intro from './components/intro';
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="App pl-10 pr-10 pt-5">
       <Header />
       <Navbar />
       <Intro />
