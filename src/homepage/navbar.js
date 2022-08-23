@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function Navbar(){
     return (
-      <nav className='flex h-20    '>
-        <div className="flex justify-center">
-          <img className=' w-80' src='https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=a768fb2' alt="logo"/>
-          <div className=' flex mr-36'>
+      <div className='grid grid-cols-2 h-20 pt-2'>
+        <div className="flex justify-start items-center">
+          <img className=' w-1/4' src='https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=a768fb2' alt=''/>
+          <div className=' flex '>
          
             {/* <!-- Mega menu here --> */}
         <div class="group">
@@ -38,21 +38,25 @@ export default function Navbar(){
         {/* <!-- end of dropdown --> */}
 
             <div>
-              <button className="peer px-4 py-3 pt-8 hover:bg-slate-200 font-bold  relative">Exchange</button>
+              <button className="peer px-4 py-3 pt-8 hover:bg-amber-200 font-bold  relative">Exchange</button>
               {/* <!-- the menu here --> */}
               <div class="hidden peer-hover:flex hover:flex w-[130px]
               flex-col bg-white drop-shadow-lg absolute">
+                <div class=' group-hover:flex flex-auto absolute  p-10  bg-amber-200 text-black duration-300'>
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >Spot</div>
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >Derivatives</div>
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >DEX</div>
+               </div>
               </div>
             </div><div>
-              <button className="peer px-4 py-3 pt-8 hover:bg-slate-200 font-bold  relative">Community</button>
+              <button className="peer px-4 py-3 pt-8 hover:bg-amber-200 font-bold  relative">Community</button>
               {/* <!-- the menu here --> */}
               <div class="hidden peer-hover:flex hover:flex w-[130px]
               flex-col bg-white drop-shadow-lg absolute">
+                <div class=' group-hover:flex flex-auto absolute  p-10  bg-amber-200 text-black duration-300'>
                   <div class="px-4 py-3 hover:bg-gray-200 " >Feeds</div>
                   <div class="px-4 py-3 hover:bg-gray-200 " >Articles</div>
+                </div>
               </div>
             </div>
 
@@ -90,11 +94,12 @@ export default function Navbar(){
             
 
             <div>
-              <button className="peer px-4 py-3 pt-8 hover:bg-slate-200 font-bold  relative">Learn</button>
+              <button className="hover:bg-amber-200 hover:text-black peer px-4 py-3 pt-8 font-bold relative">Learn</button>
               {/* <!-- the menu here --> */}
               <div class="hidden peer-hover:flex hover:flex w-[130px]
               flex-col bg-white drop-shadow-lg absolute">
-                  <div class="px-4 py-3 hover:bg-gray-200 relative" >Alexandria</div>
+                <div class="group-hover:flex flex-auto absolute  p-10  bg-amber-200 text-black duration-300">
+                  <div class="px-4 py-3 hover:bg-gray-200" >Alexandria</div>
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >News</div>
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >Conference</div>
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >Video</div>
@@ -103,6 +108,7 @@ export default function Navbar(){
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >Where to Buy</div>
                   <div class="px-4 py-3 hover:bg-gray-200 relative border-t-4" >Newsletter</div>
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >Mmethodology</div>
+                </div>
               </div>
             </div>
 
@@ -123,13 +129,15 @@ export default function Navbar(){
 
           </div>
           
-            <div className='items-center flex justify-end'>
-              <div className='flex justify-end'>
+            
+        </div>
+        <div>
+              <div className='items-center flex justify-end'>
                   <div className='flex items-center'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star-fill" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                   </svg>
-                  <div className='px-2'>Watchlist</div>
+                    <div className='px-2'>Watchlist</div>
                   </div>
 
                   <div className='flex items-center'>
@@ -139,19 +147,18 @@ export default function Navbar(){
                       </svg>
                           <div className='px-2'>Portfolio</div>
                   </div>
-                  <div className='bg-slate-300 rounded-lg flex w-96 h-14 items-center justify-between ml-2'> 
+                  <div className='bg-slate-300 rounded-lg flex w-48 h-14 items-center justify-between ml-2'> 
                       
                       <div className='flex m-3'>
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                           </svg>
-                          <div className='font-bold mx-5 text-slate-600'>Search</div>
+                          <div className='font-bold ml-5 text-slate-600'>Search</div>
                       </div>
                       <div className='bg-slate-400 w-8 text-center rounded text-white mr-3'>/</div>
                   </div>
               </div>
-          </div>
-        </div>    
-      </nav>
+          </div>   
+      </div>
 )
 }

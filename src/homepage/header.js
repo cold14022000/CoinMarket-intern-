@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderNum from "./header-number/header-num";
+import HeaderNum from "../components/header-number/header-num";
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { SelectorIcon } from "@heroicons/react/solid";
@@ -15,24 +15,24 @@ const cur = [
 export default function Header() {
   const [selected, setSelected] = useState(cur[0]);
   return (
-    <div className="bg-white flex justify-between border-b-4 h-12">
+    <div className="bg-white flex justify-between items-center border-b-4 h-12">
       <div className="flex items-center">
-        <div className="flex text-sm mr-3 ml-10">
+        <div className="flex text-xs mr-3">
           Cryptos: <HeaderNum content=" 20,549" />
         </div>
-        <div className="flex text-sm mr-3">
+        <div className="flex text-xs mr-3">
           Exchanges: <HeaderNum content=" 48%" />
         </div>
-        <div className="flex text-sm mr-3">
+        <div className="flex text-xs mr-3">
           Market Cap: <HeaderNum content=" $1,143,554,939,656.198" />
         </div>
-        <div className="flex text-sm mr-3">
+        <div className="flex text-xs mr-3">
           24h Vol: <HeaderNum content=" $78,661,723,467.43" />
         </div>
-        <div className="flex text-sm mr-3">
+        <div className="flex text-xs mr-3">
           Dominance: <HeaderNum content=" BTC: 40.0% ETH: 20.1%" />
         </div>
-        <div className="flex text-sm mr-3">
+        <div className="flex text-xs mr-3">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEX///8BAAIAAACwsLCIiIjY2NgjIyPi4uJRUVLm5uZ2dnbs7Oyenp4FBAYuLi739/e+vr7Gxsb4+PgbGxuqqqrOzs5JSUkwMDBpaWm3t7eUlJRvb2+AgIApKSkeHh8ODQ5CQkNhYWE6OjtXV1dAGWjnAAADKElEQVR4nO3dcVeqQBCH4XVIqWuGSFpp2VW//3e8qMcDyFp4mGUX7vv7rwRnnixB6OwYc0ciGXUU+XNPX3pBiBAhQoQIESJEiBAhQoQIESLsqVBUE6BQZpq+MvEn4aJLoeaTJw2Fi+xTs2w1ToXTZsLkS+RBs24lAQhz4Mgh0b8w2crpDW6tWbkU78Iz0CHRtzD5vmziiuhZOM2KLUSeNYtf4ln4t3JO4IToWXh8Hy0TXzXLn+P973DimuhbWCNGmg0c411okqxK/NDswIQgLB0wnBADEFY3y4lzzR6CELolBiE0T1fEVLGJMIS1V1GRGIiw9iou1ZoIReiOGIzQxFfEsVIT4QhdEQMSmrETYkhCN8SghE6IYQnN8ooYt28iMOE1cdW+idCEVaI8tm8iOKFJSzsNU1gmDlRY6mmowjHCu9KhcJNMa7Hu1leh9f65dbfeCuuRiXU3hPcFYasgRIiwURC2yo0j/lCFkr29nFLc2B6a8PJfT8XV7aEKY4QI7wvCVkGIEGGj/IfCJ8WMgxTqZhSeUJdYeeJQhM6CECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChB0KD70UllZKtq/SuCyE770UJsVafPbpv6/F45+9FJqS0DoatxjWrTGo24fwvagpsqtNj1uXfgIKkyx9CNNSTRHJHuZxcn5kMU3XUn6J2wO9CE1lTvV5tc3vl/3+bXK1YKZs+ir8qBW1rwfqZP5hJ0Lz2Kiq7BSAnoTVYeO3dpCkv8JfZ3sct1caCexJaKbZb/NL7GcD/REej4o/ldYbsO5PaNLZTaPIXmHGqndhXvxLLMj8e1vbyVwfhfnHiF31MHj6YqX1CxqCME+6PmyLFcAnm0jlGBGS8JhFvEyjaJ7GC11dOEKXQYgQIUKECBEiRNgHYf3CXm+F0bM1m+6EB3sHCrcmzlk1GMnkmHgjWsJmF2G7j8wQIkToOwgRIvQfhAgR+g9ChAj9ByFChP6DECFC/0Foyz8514uXq214twAAAABJRU5ErkJggg=="
             alt=""
@@ -43,10 +43,10 @@ export default function Header() {
         </div>
       </div>
       <div>
-        <div className="flex items-center h-12">
+        <div className="flex items-center">
           <div className="mr-5 font-bold " for="language"></div>
           <select className="language" id="language">
-            <option className="ml-1 mr-2" value="en">
+            <option className="ml-1 mr-2 " value="en">
               English
             </option>
             <option className="ml-1 mr-2" value="ru">
