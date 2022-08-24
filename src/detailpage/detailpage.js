@@ -1,20 +1,18 @@
 import React from "react";
-import Navbar from "../homepage/navbar";
-import Header from "../homepage/header";
-import Footer from "../homepage/footer";
+import { useLocation } from "react-router-dom";
 import {
   AdvancedRealTimeChart,
   MiniChart,
 } from "react-ts-tradingview-widgets";
 
 export default function DetailPage() {
+  const coin = useLocation();
+  const {from}= coin.state
   return (
     <div>
-      <Header />
-      <Navbar />
       <div>
         <div className="p-10">
-          Crytocurrencies {">"} Coins {">"} BTC
+          Crytocurrencies {">"} Coins {">"} {from[2]}
         </div>
       </div>
       <div className="grid grid-cols-3 gap-4">
@@ -23,15 +21,13 @@ export default function DetailPage() {
             <div className="h-7 flex font-bold text-3xl items-center">
               <img
                 className="max-h-full max-w-full pr-2"
-                src={
-                  "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
-                }
+                src={from[0]}
                 alt=""
               />
-              Bitcoin
+              {from[1]}
             </div>
             <div className="flex text-base items-center pl-2 bg-slate-200 px-2 rounded-xl mx-2">
-              BTC
+            {from[2]}
             </div>
             <button className="items-center rounded-xl border-2 px-1 mx-1 py-1">
               <svg
@@ -90,11 +86,11 @@ export default function DetailPage() {
         </div>
 
         <div className="block">
-          Bitcoin Price (BTC)
+          Bitcoin Price ({from[2]})
           <div className="flex text-4xl font-bold">
-            $21,433.80{" "}
-            <div className="text-base text-white items-center pl-2 px-2 bg-green-500 px-2 py-1 rounded m-2">
-              0.89%
+            ${from[3]}{" "}
+            <div className="text-base text-white items-center pl-2 px-2 bg-red-500 px-2 py-1 rounded m-2">
+              {from[4]}%
             </div>
           </div>
           <div className="flex ">
@@ -476,23 +472,23 @@ export default function DetailPage() {
           </div>
         </div>
         <div className="col-span-2 grid grid-cols-4 auto-cols-max">
-          <div className="border-solid border-2 p-5">
-            Market Cap<div className="font-bold">$405,932,886,740</div>
+          <div className="border-solid border-2 p-5 text-sm">
+            Market Cap<div className="font-bold">${from[7]}</div>
             <div className="text-green-600 pl-3 font-bold">0.92%</div>
           </div>
-          <div className="border-solid border-2 p-5">
+          <div className="border-solid border-2 p-5 text-sm">
             Fully Diluted Market Cap
             <div className="font-bold">$445,742,510,548</div>
             <div className="text-green-600 pl-3 font-bold">0.90%</div>
           </div>
-          <div className="border-solid border-2 p-5">
-            Volume<div className="font-bold">$25,215,849,673</div>
+          <div className="border-solid border-2 p-5 text-sm">
+            Volume<div className="font-bold">${from[8]}</div>
             <div className="text-red-600 pl-3 font-bold">0.10%</div>
           </div>
-          <div className="border-solid border-2 p-5">
+          <div className="border-solid border-2 p-5 text-sm">
             Circulating Supply
-            <div className="font-bold flex">
-              19,128,406.00 BTC<div className="justify-end">91%</div>
+            <div className="font-bold flex ">
+              {from[10]} {from[2]}
             </div>
           </div>
         </div>
@@ -523,7 +519,7 @@ export default function DetailPage() {
         <AdvancedRealTimeChart
           theme="light"
           autosize
-          symbol="CRYPTOCAP:BTC"
+          symbol={"CRYPTOCAP:" + from[2]}
         ></AdvancedRealTimeChart>
       </div>
       <div className="block">
@@ -563,7 +559,6 @@ export default function DetailPage() {
           ></MiniChart>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

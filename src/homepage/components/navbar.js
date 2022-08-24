@@ -1,15 +1,17 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export default function Navbar(){
     return (
       <div className='grid grid-cols-2 h-20 pt-2'>
         <div className="flex justify-start items-center">
-          <img className=' w-1/4' src='https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=a768fb2' alt=''/>
+          <div className=' w-1/4' ><Link to="/intro"><img src='https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=a768fb2' alt=''/></Link>
+          </div>
           <div className=' flex '>
          
             {/* <!-- Mega menu here --> */}
         <div class="group">
-            <button class=" group-hover:bg-amber-200 group-hover:text-black peer px-4 py-3 pt-8 font-bold relative ">Crytocurrencies
+            <button class=" group-hover:bg-amber-200 group-hover:text-black peer px-4 py-3 font-bold relative ">Crytocurrencies
             </button>
             <div
                 class="hidden group-hover:flex flex-col absolute  p-10  bg-amber-200 text-black duration-300">
@@ -38,7 +40,7 @@ export default function Navbar(){
         {/* <!-- end of dropdown --> */}
 
             <div>
-              <button className="peer px-4 py-3 pt-8 hover:bg-amber-200 font-bold  relative">Exchange</button>
+              <button className="peer px-4 py-3 hover:bg-amber-200 font-bold  relative">Exchange</button>
               {/* <!-- the menu here --> */}
               <div class="hidden peer-hover:flex hover:flex w-[130px]
               flex-col bg-white drop-shadow-lg absolute">
@@ -49,7 +51,7 @@ export default function Navbar(){
                </div>
               </div>
             </div><div>
-              <button className="peer px-4 py-3 pt-8 hover:bg-amber-200 font-bold  relative">Community</button>
+              <button className="peer px-4 py-3 hover:bg-amber-200 font-bold  relative">Community</button>
               {/* <!-- the menu here --> */}
               <div class="hidden peer-hover:flex hover:flex w-[130px]
               flex-col bg-white drop-shadow-lg absolute">
@@ -62,7 +64,7 @@ export default function Navbar(){
 
             {/* <!-- Mega menu here --> */}
             <div class="group">
-            <button class=" group-hover:bg-amber-200 group-hover:text-black peer px-4 py-3 pt-8 font-bold relative ">Products
+            <button class=" group-hover:bg-amber-200 group-hover:text-black peer px-4 py-3 font-bold relative ">Products
             </button>
             <div
                 class="hidden group-hover:flex flex-auto absolute  p-10  bg-amber-200 text-black duration-300">
@@ -94,7 +96,7 @@ export default function Navbar(){
             
 
             <div>
-              <button className="hover:bg-amber-200 hover:text-black peer px-4 py-3 pt-8 font-bold relative">Learn</button>
+              <button className="hover:bg-amber-200 hover:text-black peer px-4 py-3 font-bold relative">Learn</button>
               {/* <!-- the menu here --> */}
               <div class="hidden peer-hover:flex hover:flex w-[130px]
               flex-col bg-white drop-shadow-lg absolute">

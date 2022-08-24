@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { data } from '../data'
 
 export default function Table() {
   return (
-    <div className='mx-auto'>
-      <div className='items-center flex'>
+    <div className='w-auto'>
+      <div className='items-center flex justify-start'>
         <div className='flex items-center bg-slate-200 rounded-xl p-2 m-2 hover:bg-slate-300' >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -18,18 +19,18 @@ export default function Table() {
           </svg>
           <div className='px-2'>Portfolio</div>
         </div>
-        <div className='px-2 font-normal cursor-pointer flex items-center bg-blue-300 rounded-xl p-2 m-2'>Cryptocurrencies</div>
-        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>Categories</div>
-        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>DeFi</div>
-        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>NFT</div>
-        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>Metaverse</div>
-        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>Polkadot</div>
-        <div className='font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2 w-96'>BNB chain</div>
-        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>Solana</div>
-        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 flex items-center rounded-xl p-2 m-2'>Avalanche</div>
-
-        <div className='items-center flex pl-96 justify-end'>
-        <div className='px-2 font-normal cursor-pointer text-lg text-slate-600 display:inline'>show rows</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-blue-200 bg-blue-300 text-sm rounded-xl py-1'>Cryptocurrencies</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 text-sm rounded-xl py-1'>Categories</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 text-sm rounded-xl py-1'>DeFi</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 text-sm rounded-xl py-1'>NFT</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 text-sm rounded-xl py-1'>Metaverse</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 text-sm rounded-xl py-1'>Polkadot</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 text-sm rounded-xl py-1'>BNB chain</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 text-sm rounded-xl py-1'>Solana</div>
+        <div className='px-2 font-normal cursor-pointer hover:bg-slate-300 text-sm rounded-xl py-1'>Avalanche</div>
+<div className='justify-end'>
+        <div className='items-center inline-flex justify-end'>
+        <div className='px-2 font-normal cursor-pointer text-sm text-slate-600 '>show rows</div>
         <div className='flex bg-slate-200 p-2 mx-1 shadow-sm items-center rounded-lg cursor-pointer'>
           <div>20</div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="14" width="14" viewBox="0 0 24 24" class="sc-16r8icm-0 dWGZqy"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -55,24 +56,24 @@ export default function Table() {
           </svg>
           </div>
         </div>
+        </div>
       </div>
 
       <table className="table-auto mx-5 items-center text-center justify-center">
 
         <thead>
-          <tr className='items-center '>
-            <th className='text-right w-16'></th>
-            <th className='text-center w-16'>#</th>
-            <th className='text-left w-80'>Name</th>
-            <th className='text-right w-36'>Price</th>
-            <th className='text-right w-28'>1h %</th>
-            <th className='text-right w-28'>24h %</th>
-            <th className='text-right w-28'>7d %</th>
-            <th className='text-right w-60'>Market Cap</th>
-            <th className='text-right w-60'>Volume(24h)</th>
-            <th className='text-right w-60'>Circulating Supply</th>
-            <th className='text-right w-auto'>Last 7 Days</th>
-            <th className='text-right w-12' ></th>
+          <tr className='items-center'>
+            <th className='text-right px-2 w-auto'></th>
+            <th className='text-center w-auto'>#</th>
+            <th className='text-left px-2 w-auto'>Name</th>
+            <th className='text-right px-2 w-auto'>Price</th>
+            <th className='text-right px-2 w-auto'>1h %</th>
+            <th className='text-right px-2 w-auto'>24h %</th>
+            <th className='text-right px-2 w-auto'>7d %</th>
+            <th className='text-right px-2 w-auto'>Market Cap</th>
+            <th className='text-right px-2 w-auto'>Volume(24h)</th>
+            <th className='text-right px-2 items-center w-auto'>Circulating Supply</th>
+            <th className='text-right px-2 w-auto'>Last 7 Days</th>
           </tr>
         </thead>
         <tbody>
@@ -86,14 +87,15 @@ export default function Table() {
                 </td>
                 <td className='px-5'> {data.indexOf(data)}</td>
 
-
+                <Link to="/detail" state={{from:data}}>
                 <td className='flex items-center justify-center m-auto'>
-                  <img className='w-10' alt={data[1]} src={data[0]} />
+                
+                  <img className='w-8 items-center' alt={data[1]} src={data[0]} />
                   <div className='text-center items-center px-5'>{data[1]}</div>
                   
-                  <div className='px-5 text-slate-500'>{data[2]}</div>
+                  <div className='pl-2 text-slate-500'>{data[2]}</div>
                   
-                </td>
+                </td></Link>
 
 
                 <td className='px-5'> <div>{data[3]}</div></td>

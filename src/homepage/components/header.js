@@ -1,5 +1,6 @@
 import React from "react";
-import HeaderNum from "../components/header-number/header-num";
+import{ Link} from "react-router-dom";
+import HeaderNum from "../../components/header-number/header-num";
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { SelectorIcon } from "@heroicons/react/solid";
@@ -139,11 +140,11 @@ export default function Header() {
               src="https://s2.coinmarketcap.com/static/cloud/img/loyalty-program/diamond-icon.svg"
               alt=""
             />
-            <button className="p-2 w-20 border-blue-700 text-blue-700 rounded-xl border-solid text-sm border-2 font-bold">
-              Login
+            <button  className="p-2 w-20 border-blue-700 text-blue-700 rounded-xl border-solid text-sm border-2 font-bold">
+            <Link to="/login">Login</Link>
             </button>
             <button className="p-2 w-20 bg-blue-700 text-white rounded-xl text-sm border-2 font-bold">
-              Sign Up
+             <Link to="/signup">Sign Up</Link>
             </button>
           </div>
         </div>
