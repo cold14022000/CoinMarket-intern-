@@ -50,9 +50,11 @@ export default function Navbar(){
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >DEX</div>
                </div>
               </div>
-            </div><div>
+            </div>
+            
+            {/* <div>
               <button className="peer px-4 py-3 hover:bg-amber-200 font-bold  relative">Community</button>
-              {/* <!-- the menu here --> */}
+              
               <div class="hidden peer-hover:flex hover:flex w-[130px]
               flex-col bg-white drop-shadow-lg absolute">
                 <div class=' group-hover:flex flex-auto absolute  p-10  bg-amber-200 text-black duration-300'>
@@ -60,6 +62,35 @@ export default function Navbar(){
                   <div class="px-4 py-3 hover:bg-gray-200 " >Articles</div>
                 </div>
               </div>
+            </div> */}
+
+            <div className="group relative dropdown inline-block text-left">
+                <div
+                  className="inline-flex justify-center w-full rounded-md  px-4 py-2  text-xl text-gray-700 hover:text-blue-700 font-bold"
+                >
+                  Community
+                </div>
+
+              
+                <div
+                  className="hidden h-auto group-hover:block dropdown-menu absolute origin-top-right mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1"
+                >
+                  <ul className="top-0">
+                    <li className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                      <i className="bg-blue-500 text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill"></i>
+                      <div>Feeds</div>
+                    </li>
+                    <li className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                      <i className="bg-violet-600 text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></i>
+                      <div>Articles</div>
+                    </li>
+                  </ul>
+                </div>
+              
             </div>
 
             {/* <!-- Mega menu here --> */}

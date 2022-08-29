@@ -1,8 +1,99 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { data } from '../data'
+import { data } from '../data';
+
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import StaticStore from '../utils/StaticStore/index';
+import { RowItem } from './components/RowItem';
+import {subscribeServer} from '../utils/subcribe';
+import { methodCall } from '../utils/request';
+
+// const rowConfig = [
+//   {
+//     exchange: "BINANCE",
+//     currency1: "BTC",
+//     currency2: "USDT",
+//   },
+//   {
+//     exchange: "BINANCE",
+//     currency1: "ETH",
+//     currency2: "USDT",
+//   },
+//   {
+//     exchange: "BINANCE",
+//     currency1: "LPT",
+//     currency2: "USDT",
+//   },
+//   {
+//     exchange: "BINANCE",
+//     currency1: "BNB",
+//     currency2: "USDT",
+//   },
+//   {
+//     exchange: "BINANCE",
+//     currency1: "BSW",
+//     currency2: "USDT",
+//   },
+//   {
+//     exchange: "BINANCE",
+//     currency1: "ADA",
+//     currency2: "USDT",
+//   },
+//   {
+//     exchange: "BINANCE",
+//     currency1: "DOGE",
+//     currency2: "USDT",
+//   },
+// ];
+// const listSymbolInfo = ["BTC", "ETH", "LPT", "BNB", "BSW","ADA","DOGE"];
 
 export default function Table() {
+  // useEffect(() => {
+  //   let temp = [];
+  //   for (var i = 0; i < rowConfig.length; i++) {
+  //     temp = temp.concat(
+  //       `${rowConfig[i].exchange}_SPOT_${rowConfig[i].currency1}_${rowConfig[i].currency2}`
+  //     );
+  //   }
+  //   temp = JSON.stringify(temp);
+    
+  //   asyncSubData();
+  // }, []); // run the first time and just run when there are a change in rowConfig
+
+  // const asyncSubData = async (symbol_id) => {
+  //   // console.log('params',params)
+  //   // console.log("asyncSubData");
+  //   const data = await subscribeServer({
+  //     method: "sub",
+  //     symbol_ids: [
+  //       "BINANCE_SPOT_BTC_USDT",
+  //       "BINANCE_SPOT_ETH_USDT",
+  //       "BINANCE_SPOT_LPT_USDT",
+  //       "BINANCE_SPOT_BNB_USDT",
+  //       "BINANCE_SPOT_BSW_USDT",
+  //       "BINANCE_SPOT_ADA_USDT",
+  //       "BINANCE_SPOT_DOGE_USDT",
+        
+  //     ],
+  //   });
+  // };
+  // useEffect(() => {
+  //   const asyncGetDataCoin = async (symbol_id) => {
+  //     const data = await methodCall({
+  //       method: "cmc_crypto_info",
+  //       params: [symbol_id],
+  //     });
+  //     StaticStore.SymbolInfo[symbol_id] = data.result;
+  //     // console.log('dung',data)
+  //   };
+
+  //   listSymbolInfo.forEach((symbol_id) => {
+  //     asyncGetDataCoin(symbol_id);
+  //     // console.log(symbol_id);
+  //   });
+  // }, []);
+
   return (
     <div className='w-auto'>
       <div className='items-center flex justify-start'>
@@ -59,8 +150,8 @@ export default function Table() {
         </div>
       </div>
 
+      
       <table className="table-auto mx-5 items-center text-center justify-center">
-
         <thead>
           <tr className='items-center'>
             <th className='text-right px-2 w-auto'></th>
@@ -76,6 +167,19 @@ export default function Table() {
             <th className='text-right px-2 w-auto'>Last 7 Days</th>
           </tr>
         </thead>
+        
+        {/* <tbody>
+          {rowConfig.map((config, index) => {
+            return (
+              <RowItem
+                exchange={config.exchange}
+                currency1={config.currency1}
+                currency2={config.currency2}
+                index={index}
+              />
+            );
+          })}
+        </tbody> */}
         <tbody>
             {data.map((data) => {
               return <>

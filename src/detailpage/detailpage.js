@@ -12,7 +12,7 @@ export default function DetailPage() {
     <div>
       <div>
         <div className="p-10">
-          Crytocurrencies {">"} Coins {">"} {from[2]}
+          Crytocurrencies {">"} Coins {">"} {from.currency1}
         </div>
       </div>
       <div className="grid grid-cols-3 gap-4">
