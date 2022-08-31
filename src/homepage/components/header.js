@@ -1,19 +1,33 @@
 import React from "react";
-import{ Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import HeaderNum from "../../components/header-number/header-num";
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { SelectorIcon } from "@heroicons/react/solid";
+import { useContext } from "react";
+import authContext from "../../utils/auth/authContext";
 
 const cur = [
-  { name: "USD" ,icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Dollar_Sign.svg/2048px-Dollar_Sign.svg.png"},
-  { name: "AUD" ,icon: "http://cdn.onlinewebfonts.com/svg/img_464962.png"},
-  { name: "JPY" ,icon: "https://cdn-icons-png.flaticon.com/512/25/25188.png"},
-  { name: "EUR" ,icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Euro_symbol_black.svg/2010px-Euro_symbol_black.svg.png"},
-  { name: "VND" ,icon: "https://cdn2.iconfinder.com/data/icons/major-currencies-30px/30/dong_vietnamese_business_VND-512.png"},
+  {
+    name: "USD",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Dollar_Sign.svg/2048px-Dollar_Sign.svg.png",
+  },
+  { name: "AUD", icon: "http://cdn.onlinewebfonts.com/svg/img_464962.png" },
+  { name: "JPY", icon: "https://cdn-icons-png.flaticon.com/512/25/25188.png" },
+  {
+    name: "EUR",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Euro_symbol_black.svg/2010px-Euro_symbol_black.svg.png",
+  },
+  {
+    name: "VND",
+    icon: "https://cdn2.iconfinder.com/data/icons/major-currencies-30px/30/dong_vietnamese_business_VND-512.png",
+  },
 ];
 
+
+
 export default function Header() {
+  const { authenticated,user } = useContext(authContext);
   const [selected, setSelected] = useState(cur[0]);
   return (
     <div className="bg-white flex justify-between items-center border-b-4 h-12">
@@ -86,7 +100,10 @@ export default function Header() {
             <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1">
                 <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left hover:bg-slate-300 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-                  <span className="block truncate flex"  ><img className='h-3 w-3 ' src={selected.icon} alt=""/>{selected.name}</span>
+                  <span className="block truncate flex">
+                    <img className="h-3 w-3 " src={selected.icon} alt="" />
+                    {selected.name}
+                  </span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <SelectorIcon
                       className="h-5 w-5 text-gray-400"
@@ -120,10 +137,13 @@ export default function Header() {
                                 selected ? "font-medium" : "font-normal"
                               }`}
                             >
-                              <img className='h-3 w-3' src={person.icon} alt=""/>{person.name}
+                              <img
+                                className="h-3 w-3"
+                                src={person.icon}
+                                alt=""
+                              />
+                              {person.name}
                             </span>
-                           
-                        
                           </>
                         )}
                       </Listbox.Option>
@@ -140,12 +160,18 @@ export default function Header() {
               src="https://s2.coinmarketcap.com/static/cloud/img/loyalty-program/diamond-icon.svg"
               alt=""
             />
-            <button  className="p-2 w-20 border-blue-700 text-blue-700 rounded-xl border-solid text-sm border-2 font-bold">
-            <Link to="/login">Login</Link>
-            </button>
-            <button className="p-2 w-20 bg-blue-700 text-white rounded-xl text-sm border-2 font-bold">
-             <Link to="/signup">Sign Up</Link>
-            </button>
+            <div>
+              {authenticated ? 
+              <div>{user.name}</div>
+               :   <div>
+               <button className="p-2 w-20 border-blue-700 text-blue-700 rounded-xl border-solid text-sm border-2 font-bold">
+                 <Link to="/login">Login</Link>
+               </button>
+               <button className="p-2 w-20 bg-blue-700 text-white rounded-xl text-sm border-2 font-bold">
+                 <Link to="/signup">Sign Up</Link>
+               </button>{" "}
+             </div>}
+            </div>
           </div>
         </div>
       </div>

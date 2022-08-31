@@ -13,6 +13,7 @@ export default function Navbar(){
         <div class="group">
             <button class=" group-hover:bg-amber-200 group-hover:text-black peer px-4 py-3 font-bold relative ">Crytocurrencies
             </button>
+<<<<<<< Updated upstream
             <div
                 class="hidden group-hover:flex flex-col absolute  p-10  bg-amber-200 text-black duration-300">
                 
@@ -34,11 +35,62 @@ export default function Navbar(){
                         <div  class=" hover:bg-gray-200">Top Collections</div>
                         <div  class=" hover:bg-gray-200">Upcoming Sales</div>
                     </div>
+=======
+            <div class="hidden group-hover:flex flex-col absolute  p-10 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div class="grid grid-cols-2 md:grid-cols-2 gap-5">
+                <div class="flex flex-col">
+                  <h3 class="mb-4 text-xl">Crytocurrencies</h3>
+                  <div class="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg' className=" text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-x-diamond-fill"></img>
+                    Ranking
+                  </div>
+                  <div class="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuRecentlyAddedIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-x-diamond-fill"></img>
+                    Recently Added
+                  </div>
+                  <div class="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCategoriesIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-x-diamond-fill"></img>
+                    Categories
+                  </div>
+                  <div class="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuSpotlightIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-x-diamond-fill"></img>
+                    Spotlight
+                  </div>
+                  <div class="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuGainersLosersIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-x-diamond-fill"></img>
+                    Gainers & Losers
+                  </div>
+                  <div class="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuGlobalChartsIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-x-diamond-fill"></img>
+                    Global Charts
+                  </div>
+                  <div class="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuHistoryIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-x-diamond-fill"></img>
+                    Historical Snapshots
+                  </div>
+                </div>
+
+                <div class="flex flex-col">
+                  <h3 class="mb-4 text-xl">NFT</h3>
+                  <div class="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src="https://s2.coinmarketcap.com/static/cloud/img/menu/MenuNFTOverview.svg" className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-x-diamond-fill"></img>
+                    Overall NFT stats
+                  </div>
+                  <div class="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuNFTCollections.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-x-diamond-fill"></img>
+                    Top Collections
+                  </div>
+                  <div class="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <i className="bg-teal-900 text-white mr-5 text-center p-2 rounded-full w-10 h-10 bi bi-x-diamond-fill"></i>
+                    Upcoming Sales
+                  </div>
+>>>>>>> Stashed changes
                 </div>
             </div>
         </div> 
         {/* <!-- end of dropdown --> */}
 
+<<<<<<< Updated upstream
             <div>
               <button className="peer px-4 py-3 hover:bg-amber-200 font-bold  relative">Exchange</button>
               {/* <!-- the menu here --> */}
@@ -49,6 +101,27 @@ export default function Navbar(){
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >Derivatives</div>
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >DEX</div>
                </div>
+=======
+          <div className="group ">
+            <button className="relative flex justify-center w-full px-4 py-3 text-gray-700 font-bold">
+              Exchange
+            </button>
+
+            <div className="hidden group-hover:flex absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="h-auto group-hover:block absolute w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src="https://s2.coinmarketcap.com/static/cloud/img/menu/MenuSpotIcon.svg" className=" text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-diamond-fill"></img>
+                  <div>Spot</div>
+                </div>
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuDerivativesIcon.svg' className=" text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-caret-up-fill"></img>
+                  <div>Derivatives</div>
+                </div>
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuDexIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-x-diamond-fill"></img>
+                  <div>DEX</div>
+                </div>
+>>>>>>> Stashed changes
               </div>
             </div>
             
@@ -71,6 +144,7 @@ export default function Navbar(){
                   Community
                 </div>
 
+<<<<<<< Updated upstream
               
                 <div
                   className="hidden h-auto group-hover:block dropdown-menu absolute origin-top-right mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
@@ -91,12 +165,24 @@ export default function Navbar(){
                   </ul>
                 </div>
               
+=======
+            <div className="hidden h-auto group-hover:block absolute w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                <img className=" text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill" src='https://s2.coinmarketcap.com/static/cloud/img/menu/feed.svg' alt=''></img>
+                <div>Feeds</div>
+              </div>
+              <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                <img src ='https://s2.coinmarketcap.com/static/cloud/img/menu/articles.svg' className=" text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                <div>Articles</div>
+              </div>
+>>>>>>> Stashed changes
             </div>
 
             {/* <!-- Mega menu here --> */}
             <div class="group">
             <button class=" group-hover:bg-amber-200 group-hover:text-black peer px-4 py-3 font-bold relative ">Products
             </button>
+<<<<<<< Updated upstream
             <div
                 class="hidden group-hover:flex flex-auto absolute  p-10  bg-amber-200 text-black duration-300">
                 
@@ -120,12 +206,65 @@ export default function Navbar(){
                         <div  class=" hover:bg-gray-200">ICO Calendar</div>
                         <div  class=" hover:bg-gray-200">Events Calendar</div>
                     </div>
+=======
+            <div class="hidden group-hover:flex flex-col absolute p-10 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div class="grid grid-cols-3 md:grid-cols-3 gap-5">
+                <div class="flex flex-col">
+                  <h3 class="mb-4 text-xl">Products</h3>
+                  <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuConverterIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                    Converter
+                  </div>
+                  <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuMobileAppIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                    Mobile Apps
+                  </div>
+                  <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuExplorerIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                    Blockchain Explorer
+                  </div>
+                  <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuJobsBoardIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                    Job Board
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <h3 class="mb-4 text-xl">Campaigns</h3>
+                  <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuAirdropsIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                    Free Airdrops
+                  </div>
+                  <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuRewardsIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                    Diamond Rewards
+                  </div>
+                  <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuReferralIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                    Referral Program
+                  </div>
+                  <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuEarnCryptoIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                    Learn & Earn
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <h3 class="mb-4 text-xl">Calendars</h3>
+                  <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuICOIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                    ICO Calendar
+                  </div>
+                  <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                    <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuEvents2Icon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-file-earmark-text-fill"></img>
+                    Events Calendar
+                  </div>
+>>>>>>> Stashed changes
                 </div>
             </div>
         </div> 
         {/* <!-- end of dropdown --> */}
             
 
+<<<<<<< Updated upstream
             <div>
               <button className="hover:bg-amber-200 hover:text-black peer px-4 py-3 font-bold relative">Learn</button>
               {/* <!-- the menu here --> */}
@@ -142,6 +281,53 @@ export default function Navbar(){
                   <div class="px-4 py-3 hover:bg-gray-200 relative border-t-4" >Newsletter</div>
                   <div class="px-4 py-3 hover:bg-gray-200 relative" >Mmethodology</div>
                 </div>
+=======
+          <div className="group">
+            <button className="px-4 py-3 font-bold relative">Learn</button>
+            {/* <!-- the menu here --> */}
+            <div
+              class="hidden group-hover:flex
+              drop-shadow-lg absolute"
+            >
+              <div className="hidden h-auto group-hover:block absolute w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuAlexandriaIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill"></img>
+                  Alexandria
+                </div>
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuNewsIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill"></img>
+                  News
+                </div>
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuConferenceIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill"></img>
+                  Conference
+                </div>
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuVideosIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill"></img>
+                  Video
+                </div>
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuMarketUpdatesIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill"></img>
+                  Market Updates
+                </div>
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuGlossaryIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill"></img>
+                  Glossary
+                </div>
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuBuyIcon.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill"></img>
+                  Where to Buy
+                </div>
+                <div>
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuNewsletterIcon.light.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill"></img>
+                  Newsletter
+                </div>
+                <div className="flex items-center p-2 hover:bg-slate-200 rounded-xl font-bold">
+                  <img src='https://s2.coinmarketcap.com/static/cloud/img/menu/MenuMethodologyIcon.light.svg' className="text-white mr-5 text-center p-2 rounded-full w-12 h-12 bi bi-rss-fill"></img>
+                  Methodology
+                </div></div>
+>>>>>>> Stashed changes
               </div>
             </div>
 
