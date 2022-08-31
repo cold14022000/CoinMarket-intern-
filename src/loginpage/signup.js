@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function SignupPage() {
     return(
@@ -47,9 +48,9 @@ export default function SignupPage() {
 
                 <div class="text-grey-dark mt-6">
                     Already have an account? 
-                    <a class="no-underline border-b border-blue text-blue" href="../login/">
-                        Log in
-                    </a>.
+                    <Link to="/login"><a class="no-underline border-b border-blue text-blue" href="../login/">
+                        Login
+                    </a></Link>
                 </div>
             </div>
         </div>

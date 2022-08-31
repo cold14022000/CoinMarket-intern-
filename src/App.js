@@ -8,6 +8,8 @@ import DetailPage from './detailpage/detailpage';
 import LoginPage from './loginpage/login';
 import SignupPage from './loginpage/signup';
 import io from 'socket.io-client'
+import { useEffect, useState } from 'react';
+import authContext from './utils/auth/authContext';
 
 const socket = io('http://io.nvdise.space', {
   timeout: 2000,
@@ -20,9 +22,27 @@ export const getSocket=()=>{
   return socket;
   
 }
-export default function App() {
+export default function App() {useEffect(() => {
+  // 👇️ scroll to top on page load
+  window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+}, []);
+useEffect(()=>{
+  socket.on('connect',()=>{
+    console.log(socket);
+  })
+})
+
+const [authenticated,setAuthenticated] = useState(false);
+const [token, setToken] = useState('')
+const [user, setUser] = useState({})
+
+useEffect(()=>{
+  console.log(token)
+  console.log(JSON.stringify(user))
+},[token,authenticated,user])
   return (
-    <div className="pl-10 pr-10 pt-5">
+    <authContext.Provider value={{authenticated,setAuthenticated,token, setToken, user,setUser}}>
+<div className="pl-10 pr-10 pt-5">
       <BrowserRouter >
         <Header />
         <Navbar />
@@ -36,5 +56,6 @@ export default function App() {
         <Footer />
       </BrowserRouter>
     </div>
+    </authContext.Provider >
   );
 }

@@ -1,18 +1,56 @@
-import React from "react";
+import React, { memo, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import {
   AdvancedRealTimeChart,
   MiniChart,
 } from "react-ts-tradingview-widgets";
+import StaticStore from "../utils/StaticStore";
+import { eventList } from "../utils/constants/eventLists";
 
-export default function DetailPage() {
+export default function DetailPage(props) {
   const coin = useLocation();
-  const {from}= coin.state
+  const {from, exchange,currency1,currency2}= coin.state
+  const [data,setData]= useState([])
+
+  useEffect(() => {
+    const listenData = StaticStore.appEvent.subscribe(async (msg) => {
+      if (msg.type === eventList.UPDATE_MARKET_DATA) {
+        const [exchangeSplit, tradeTypeSplit, currency1Split, currency2Split] =
+          msg.symbol_id?.split("_");
+        if (currency1Split) {
+          const dataRowTempt = {
+            ...StaticStore.StructureData[
+              `${exchange}_SPOT_${currency1}_${currency2}`
+            ],
+            info: StaticStore.SymbolInfo[currency1]
+          };
+          setData({ ...dataRowTempt });
+          // console.log('gan data coin')
+        }
+        
+        // console.log("UPDATE_MARKET_DATA", msg, StaticStore.StructureData);
+        // Thực hiện logic set lại dataTable
+        // console.log(rowData);
+      }
+    })
+
+    return () => {
+      listenData.unsubscribe();
+    };
+  }, [currency1]);
+
+  const redOrGreen = (num) => {
+    if (num > 0) return "text-green-600";
+    if (num < 0) return "text-red-600";
+    if (num === 0) return "text-yellow-500";
+  };
+  
   return (
     <div>
       <div>
         <div className="p-10">
-          Crytocurrencies {">"} Coins {">"} {from.currency1}
+          Crytocurrencies {">"} Coins {">"} {from.info?.symbol}
         </div>
       </div>
       <div className="grid grid-cols-3 gap-4">
@@ -21,13 +59,14 @@ export default function DetailPage() {
             <div className="h-7 flex font-bold text-3xl items-center">
               <img
                 className="max-h-full max-w-full pr-2"
-                src={from[0]}
-                alt=""
+                src={from?.info?.logo}
+                alt={from?.info?.symbol}
               />
-              {from[1]}
+              
+              {from?.info?.name}
             </div>
             <div className="flex text-base items-center pl-2 bg-slate-200 px-2 rounded-xl mx-2">
-            {from[2]}
+            {from?.info?.symbol}
             </div>
             <button className="items-center rounded-xl border-2 px-1 mx-1 py-1">
               <svg
@@ -86,15 +125,32 @@ export default function DetailPage() {
         </div>
 
         <div className="block">
-          Bitcoin Price ({from[2]})
+          Bitcoin Price ({from?.info?.symbol})
           <div className="flex text-4xl font-bold">
-            ${from[3]}{" "}
-            <div className="text-base text-white items-center pl-2 px-2 bg-red-500 px-2 py-1 rounded m-2">
-              {from[4]}%
-            </div>
+            ${data.trade?.price}{" "}
+            
           </div>
-          <div className="flex ">
-            13.37 ETH<div className="text-red-600 pl-3 font-bold">0.07%</div>
+          <div className="flex items-center">
+            13.37 ETH
+              <div className="w-auto pl-2 px-2 px-2 py-1 rounded m-2">
+            <td
+        className={redOrGreen(
+          (
+            (data.ohlcv?.["1HRS"]?.price_open /
+            data.ohlcv?.["1HRS"]?.price_close) *
+              100 -
+            100
+          ).toFixed(2)
+        )}
+      >
+        {(
+          (data.ohlcv?.["1HRS"]?.price_open /
+          data.ohlcv?.["1HRS"]?.price_close) *
+            100 -
+          100
+        ).toFixed(2)}
+        <div className="inline">%</div>
+      </td></div>
           </div>
         </div>
 
@@ -515,50 +571,57 @@ export default function DetailPage() {
           </li>
         </ul>
       </div>
-      <div className="h-screen w-3/5 pl-20">
-        <AdvancedRealTimeChart
-          theme="light"
-          autosize
-          symbol={"CRYPTOCAP:" + from[2]}
-        ></AdvancedRealTimeChart>
-      </div>
-      <div className="block">
-        <div className="px-5 mx-1 py-3 font-bold text-3xl">
-          People Also Watch
-        </div>
-        <div className="grid grid-cols-6 gap-4">
-          <MiniChart
-            colorTheme="light"
-            width="100%"
-            symbol="CRYPTOCAP:BTC"
-          ></MiniChart>
-          <MiniChart
-            colorTheme="light"
-            width="100%"
-            symbol="NASDAQ:AAPL"
-          ></MiniChart>
-          <MiniChart
-            colorTheme="light"
-            width="100%"
-            symbol="BINANCE:ETHUSDT"
-          ></MiniChart>
-          <MiniChart
-            colorTheme="light"
-            width="100%"
-            symbol="BINANCE:SOLUSDT"
-          ></MiniChart>
-          <MiniChart
-            colorTheme="light"
-            width="100%"
-            symbol="BINANCE:CHZUSDT"
-          ></MiniChart>
-          <MiniChart
-            colorTheme="light"
-            width="100%"
-            symbol="BINANCE:SHIBUSDT"
-          ></MiniChart>
-        </div>
-      </div>
+      <ChartTradingView from={from} />
+    <ChartTradingViewMini />
     </div>
   );
 }
+
+const ChartTradingView = memo(({ from}) => {
+  return <div className="h-screen w-3/5 pl-20">
+  <AdvancedRealTimeChart
+    theme="light"
+    autosize
+    symbol={from.info?.symbol + "USDT"}
+  ></AdvancedRealTimeChart>
+</div>
+})
+const ChartTradingViewMini = memo(() => {
+  return       <div className="block">
+  <div className="px-5 mx-1 py-3 font-bold text-3xl">
+    People Also Watch
+  </div>
+  <div className="grid grid-cols-6 gap-4">
+    <MiniChart
+      colorTheme="light"
+      width="100%"
+      symbol="CRYPTOCAP:BTC"
+    ></MiniChart>
+    <MiniChart
+      colorTheme="light"
+      width="100%"
+      symbol="NASDAQ:AAPL"
+    ></MiniChart>
+    <MiniChart
+      colorTheme="light"
+      width="100%"
+      symbol="BINANCE:ETHUSDT"
+    ></MiniChart>
+    <MiniChart
+      colorTheme="light"
+      width="100%"
+      symbol="BINANCE:SOLUSDT"
+    ></MiniChart>
+    <MiniChart
+      colorTheme="light"
+      width="100%"
+      symbol="BINANCE:CHZUSDT"
+    ></MiniChart>
+    <MiniChart
+      colorTheme="light"
+      width="100%"
+      symbol="BINANCE:SHIBUSDT"
+    ></MiniChart>
+  </div>
+</div>
+})

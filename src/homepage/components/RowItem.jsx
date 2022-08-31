@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom'
 import { eventList } from "../../utils/constants/eventLists";
 import StaticStore from "../../utils/StaticStore";
 import numeral from "numeral";
+import DetailPage from "../../detailpage/detailpage";
 
 export const RowItem = ({ exchange, currency1, currency2, index }) => {
   const navigate = useNavigate();
@@ -48,10 +50,9 @@ export const RowItem = ({ exchange, currency1, currency2, index }) => {
     <tr
       key={String(index)}
       className="items-center text-right cursor-pointer"
-      onClick={() => {
-        navigate("coin/" + currency1);
-      }}
-    >
+      >
+      
+    
       {/* {console.log("rowData", rowData)} */}
       <td className="px-5">
         <svg
@@ -66,18 +67,19 @@ export const RowItem = ({ exchange, currency1, currency2, index }) => {
         </svg>
       </td>
       <td></td>
-
+      <Link to="/detail" state={{from:rowData, exchange,currency1,currency2}}>
       <td className="flex items-center">
         <img
           className="p-2 h-16"
           src={rowData?.info?.logo}
           alt={rowData?.info?.symbol}
         />
+        
         <div className="items-center">{rowData?.info?.name}</div>
         <div className="text-slate-500 px-5 text-lg">
           {rowData?.info?.symbol}
         </div>
-      </td>
+      </td></Link>
       <td className="px-5 font-bold">
         {" "}
         <div>{numFormat(rowData?.trade?.price)}</div>
@@ -155,4 +157,5 @@ export const RowItem = ({ exchange, currency1, currency2, index }) => {
       </td>
     </tr>
   );
+  
 };
